@@ -3,7 +3,7 @@ sentinela es un proyecto para brindar una solución a la gestión y análisis de
 
 ### vistas del sistema
 
-![ventana principal de sentinela](.imag/dashboard)
+![ventana principal de sentinela](/imag/dashboard)
 
-![control de activos](./imag/activo)
+![control de activos](/imag/activo)
 
