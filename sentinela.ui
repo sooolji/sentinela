@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>sentinela</class>
+ <widget class="QMainWindow" name="sentinela">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>876</width>
+    <height>607</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sistema Sentinela</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Estilos generales */
+QWidget {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+    background-color: #f5f5f5;
+}
+
+/* Barra de menú */
+QMenuBar {
+    background-color: #4a6fa5;
+    color: white;
+    padding: 2px;
+}
+
+QMenuBar::item {
+    padding: 5px 10px;
+    background: transparent;
+    border-radius: 4px;
+}
+
+QMenuBar::item:selected {
+    background: #3a5a80;
+}
+
+QMenuBar::item:pressed {
+    background: #2a4a70;
+}
+
+/* Menús desplegables */
+QMenu {
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+QMenu::item:selected {
+    background-color: #4a6fa5;
+    color: white;
+}
+
+QMenu::item:disabled {
+    color: #999;
+}
+
+/* Barra de estado */
+QStatusBar {
+    background-color: #4a6fa5;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>876</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menú</string>
+    </property>
+    <addaction name="actionInicio"/>
+    <addaction name="actionActivos"/>
+    <addaction name="actionAmenazas"/>
+    <addaction name="actionImpacto"/>
+   </widget>
+   <widget class="QMenu" name="menuAdmin">
+    <property name="title">
+     <string>Administración</string>
+    </property>
+    <addaction name="actionUsuarios"/>
+    <addaction name="actionAuditoria"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuAdmin"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionInicio">
+   <property name="text">
+    <string>Inicio</string>
+   </property>
+  </action>
+  <action name="actionActivos">
+   <property name="text">
+    <string>Activos</string>
+   </property>
+  </action>
+  <action name="actionAmenazas">
+   <property name="text">
+    <string>Amenazas</string>
+   </property>
+  </action>
+  <action name="actionImpacto">
+   <property name="text">
+    <string>Gestión de Riesgos</string>
+   </property>
+  </action>
+  <action name="actionUsuarios">
+   <property name="text">
+    <string>Gestión de Usuarios</string>
+   </property>
+  </action>
+  <action name="actionAuditoria">
+   <property name="text">
+    <string>Auditoría</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

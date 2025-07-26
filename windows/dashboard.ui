@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dashboard</class>
+ <widget class="QWidget" name="dashboard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dashboard - Sistema Sentinela</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Estilos generales */
+QWidget {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Contenedores de métricas */
+.metric-container {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+.metric-title {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+}
+
+.metric-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a6fa5;
+}
+
+.metric-description {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Gráfico principal */
+QChartView {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Lista de vulnerables */
+.vulnerable-list {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.vulnerable-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a6fa5;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.vulnerable-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.vulnerable-item:last-child {
+    border-bottom: none;
+}
+
+QListWidget{
+        QLineEdit {
+			  background-color: white; 
+}
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutMetrics">
+     <item>
+      <widget class="QFrame" name="frameThreats">
+       <property name="styleSheet">
+        <string notr="true">.metric-container</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutThreats">
+        <item>
+         <widget class="QLabel" name="labelThreatsTitle">
+          <property name="styleSheet">
+           <string notr="true">.metric-title</string>
+          </property>
+          <property name="text">
+           <string>AMENAZAS REGISTRADAS</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelThreatsValue">
+          <property name="styleSheet">
+           <string notr="true">.metric-value</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelThreatsDesc">
+          <property name="styleSheet">
+           <string notr="true">.metric-description</string>
+          </property>
+          <property name="text">
+           <string>Total en el sistema</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frameAssets">
+       <property name="styleSheet">
+        <string notr="true">.metric-container</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutAssets">
+        <item>
+         <widget class="QLabel" name="labelAssetsTitle">
+          <property name="styleSheet">
+           <string notr="true">.metric-title</string>
+          </property>
+          <property name="text">
+           <string>ACTIVOS REGISTRADOS</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelAssetsValue">
+          <property name="styleSheet">
+           <string notr="true">.metric-value</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelAssetsDesc">
+          <property name="styleSheet">
+           <string notr="true">.metric-description</string>
+          </property>
+          <property name="text">
+           <string>Total en el sistema</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frameRisk">
+       <property name="styleSheet">
+        <string notr="true">.metric-container</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutRisk">
+        <item>
+         <widget class="QLabel" name="labelRiskTitle">
+          <property name="styleSheet">
+           <string notr="true">.metric-title</string>
+          </property>
+          <property name="text">
+           <string>RIESGO TOTAL</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelRiskValue">
+          <property name="styleSheet">
+           <string notr="true">.metric-value</string>
+          </property>
+          <property name="text">
+           <string>0.0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelRiskDesc">
+          <property name="styleSheet">
+           <string notr="true">.metric-description</string>
+          </property>
+          <property name="text">
+           <string>Nivel de riesgo promedio</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutMain">
+     <item>
+      <widget class="QChartView" name="chartView" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>600</width>
+         <height>400</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frameVulnerables">
+       <property name="styleSheet">
+        <string notr="true">.vulnerable-list</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutVulnerables">
+        <item>
+         <widget class="QLabel" name="labelVulnerablesTitle">
+          <property name="styleSheet">
+           <string notr="true">.vulnerable-title</string>
+          </property>
+          <property name="text">
+           <string>ACTIVOS MÁS VULNERABLES</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="listVulnerableAssets">
+          <property name="styleSheet">
+           <string notr="true">.vulnerable-item</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelThreatsTitle_2">
+          <property name="styleSheet">
+           <string notr="true">.vulnerable-title</string>
+          </property>
+          <property name="text">
+           <string>AMENAZAS MÁS FRECUENTES</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="listCommonThreats">
+          <property name="styleSheet">
+           <string notr="true">.vulnerable-item</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QWidget</extends>
+   <header>qchartview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
